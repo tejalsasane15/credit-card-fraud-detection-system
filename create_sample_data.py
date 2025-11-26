@@ -4,12 +4,12 @@ import numpy as np
 # Create sample creditcard.csv for demo
 np.random.seed(42)
 
-# Generate 1000 sample transactions
-n_samples = 1000
+# Generate 5000 sample transactions with more fraud cases
+n_samples = 5000
 data = {
     'Time': np.random.randint(0, 86400, n_samples),
     'Amount': np.random.exponential(100, n_samples),
-    'Class': np.random.choice([0, 1], n_samples, p=[0.998, 0.002])
+    'Class': np.random.choice([0, 1], n_samples, p=[0.95, 0.05])  # 5% fraud rate
 }
 
 # Add V1-V28 features (PCA components)
